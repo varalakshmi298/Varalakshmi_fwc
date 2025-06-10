@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[a4paper,
+            top = 2in, 
+            bottom = 1in, 
+            left = 1in, 
+            right=1in, 
+            margin width = 1pt] {geometry}
+\usepackage{fancyhdr}
+\pagestyle{empty} % Start with empty page style
+\thispagestyle{fancy} % Apply fancy style only to the first page
+\renewcommand{\headrulewidth}{0pt} % Remove header rule
+\fancyhead[L]{% Left header
+        \includegraphics[width=8cm, height=1.7cm]{Question2.jpeg} 
+        }
+\fancyhead[R]{% Right header
+    Name: N.VaraLakshmi   \\
+    Batch: COMETFWC021 \\
+    Date: 18 May 2025\\
+}
+
+\begin{document}
+
+\section*{Question 1}
+
+\textbf{Q.} The Boolean expression for the output $f$ of the multiplexer shown below is:
+
+\begin{itemize}
+  \item[(A)] $(P \oplus Q \oplus R)'$
+  \item[(B)] $P \oplus Q \oplus R$
+  \item[(C)] $P + Q + R$
+  \item[(D)] $(P + Q + R)'$
+\end{itemize}
+
+\subsection*{Solution}
+
+This is a 4:1 multiplexer with select lines $P$ (MSB) and $Q$ (LSB). The data inputs are connected as:
+
+\begin{center}
+\begin{tabular}{cc|c}
+\toprule
+$P$ & $Q$ & Selected Input \\
+\midrule
+0 & 0 & $R$ \\
+0 & 1 & $R'$ \\
+1 & 0 & $R'$ \\
+1 & 1 & $R$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+So, the output function becomes:
+\[
+f = (\overline{P} \cdot \overline{Q} \cdot R) + (\overline{P} \cdot Q \cdot R') + (P \cdot \overline{Q} \cdot R') + (P \cdot Q \cdot R)
+\]
+
+Group and simplify:
+\[
+f = R(\overline{P}\,\overline{Q} + P Q) + R'(\overline{P} Q + P \overline{Q})
+\]
+
+This gives:
+\[
+f = R \cdot \text{XNOR}(P, Q) + R' \cdot \text{XOR}(P, Q)
+\Rightarrow f = P \oplus Q \oplus R
+\]
+
+\textbf{Hence, the correct answer is (B).}
+
+\end{document}
