@@ -1,0 +1,136 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{url}
+
+\setlength{\columnsep}{1cm}
+
+\begin{document}
+
+% Title Block
+\begin{center}
+    \textbf{\Large IMPLEMENTATION OF BOOLEAN LOGIC USING ARDUINO} \\[10pt]
+    \textbf{N. VARALAKSHMI} \\
+    \texttt{varalakshminissankara4@gmail.com} \\
+    \textbf{COMET.FWC021} \\
+    \textbf{Future Wireless Communication (FWC)} \\
+    \textbf{ASSIGNMENT} \\[5pt]
+    July 07, 2025
+\end{center}
+\vspace{1em}
+
+\begin{multicols}{2}
+
+% Abstract
+\noindent\textbf{Abstract} \\[0.5em]
+\includegraphics[width=0.9\linewidth]{image11.jpg} \\[0.5em]
+\textit{(GATE 2010 IN, Question No.42 – Implementing the above logic diagram Boolean logic using Arduino)}
+
+\vspace{1em}
+\noindent\textbf{1. Components}
+\begin{table}[H]
+\small
+\centering
+\begin{tabular}{|p{4.2cm}|c|}
+\hline
+\textbf{Component} & \textbf{Qty} \\
+\hline
+Arduino UNO Board & 1 \\
+USB Cable (Type B) & 1 \\
+Push Buttons & 2 \\
+LEDs & 1 \\
+220$\Omega$ Resistors & 2 \\
+Jumper Wires (M-M) & 10 \\
+Breadboard & 1 \\
+Android Mobile with Arduinodroid App & 1 \\
+\hline
+\end{tabular}
+\caption*{Table 1: List of components used}
+\end{table}
+
+\vspace{1em}
+\noindent\textbf{2. Setup and Connections}
+\begin{enumerate}
+    \item Connect push buttons to D2, D3 for A and B.
+    \item Add pull-down resistors to each input.
+    \item Connect an LED to pin D13 via a 220$\Omega$ resistor.
+    \item Use a common ground for buttons and LED.
+    \item Power the Arduino via USB and use the Arduinodroid app.
+\end{enumerate}
+
+\vspace{1em}
+\noindent\textbf{3. Steps for Implementation}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{image12.jpg}
+    \caption{Enter Caption}
+    \label{fig:enter-label}
+\end{figure}
+\begin{enumerate}
+    \item Complete the circuit connections.
+    \item Connect Arduino to mobile via USB.
+    \item Open Arduinodroid, select board and port.
+    \item Open, save, compile and upload the code.
+\end{enumerate}
+
+\vspace{1em}
+\noindent\textbf{4. Truth Table}
+\[
+\begin{array}{|c|c|c|}
+\hline
+X & Y & Z \\
+\hline
+0 & 0 & 0 \\
+0 & 1 & 0 \\
+1 & 0 & 1 \\
+1 & 1 & 0 \\
+\hline
+\end{array}
+\]
+
+\end{multicols}
+
+\vspace{1em}
+\noindent\textbf{5.Implementation}
+
+\noindent
+\makebox[\linewidth][l]{%
+$\begin{aligned}
+Z &= \text{Sum of minterms where output is 1} \\
+  &= m_1 + m_2 \\
+  &= X\overline{Y} + \overline{X}Y \\
+  &= (X \cdot \overline{Y}) + (\overline{X} \cdot Y) \\
+  &= \boxed{Z = X \oplus Y}
+\end{aligned}$%
+}
+
+
+\vspace{1em}
+\noindent\textbf{6. Input and Output Pins}
+\begin{flushleft}
+\begin{itemize}
+    \item \textbf{X (Input)} – D2
+    \item \textbf{Y (Input)} – D3
+    \item \textbf{Z (Output LED)} – D13
+\end{itemize}
+\end{flushleft}
+
+\vspace{1em}
+\noindent\textbf{7. Arduino Code Link}
+
+\noindent
+\url{https://github.com/varalakshmi298/ide/gate/gate_q6.ino}
+
+\vspace{1em}
+\begin{figure}[H]
+\includegraphics[width=0.5\linewidth]{image12.jpg}
+\caption{Implemented Logic Circuit Using Arduino}
+\end{figure}
+
+\end{document}
